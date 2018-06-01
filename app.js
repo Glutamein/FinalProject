@@ -3,6 +3,9 @@ var app = express();
 
 app.use(express.static(__dirname + '/public'));
 
+var loginRoutes = require('./routes/login');
+app.use("/login/", routes);
+
 app.set('views', './views');
 app.set('view engine', 'pug');
 
