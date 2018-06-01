@@ -1,0 +1,20 @@
+.errorText{
+    color: red;
+    padding: 2px;
+    transform:rotate(-180deg);
+}
+
+.errorInput{
+    border: solid 2px #26D840;
+}
+
+div{
+    padding: 2px;
+}
+
+input{
+    height:15px;
+    width:30px;
+    font-size:14pt;
+}
+
