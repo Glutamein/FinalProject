@@ -1,5 +1,15 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extented:true}));
+
+var router = require('./routes/routes');
+app.use("/", router);
+var router = require('./routes/adminRouts');
+app.use("/admin/", router);
 
 app.use(express.static(__dirname + '/public'));
 
