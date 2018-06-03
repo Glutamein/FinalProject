@@ -5,7 +5,7 @@
 }
 
 .errorInput{
-    border: solid 2px #26D840;
+    border: solid 2px red;
 }
 
 div{
@@ -16,5 +16,21 @@ input{
     height:15px;
     width:30px;
     font-size:14pt;
+}
+
+.post{
+    background-color: blue;
+    align-items: center;
+    padding: 12%;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.createPost{
+    background-color: blue;
+    align-items: center;
+    padding: 12%;
+    margin: 20px;
+    border-radius: 30px;
 }
 
