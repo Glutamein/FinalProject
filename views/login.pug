@@ -1,20 +1,59 @@
 html
     head
-        title= title
+        title=mainTitle
         link(rel="stylesheet",  href="/css/styles.css")
         script(src="/js/scripts.js")
     body
-         form(action="login", name='inlog')
-            div(class=["input"])
-                lable(for="username") Username: 
-                input#id(type="text", placeholder="Put your username here", name="name")
-                span(class="errorText")
-            div(class=["input"])
-                lable(for="password") Passsword: 
-                input#id(type="text", name="password", placeholder="Password goes here") 
-                span(class="errorText")
-            div(class=["input"])
-               button= Login
-
+        h1= Whalecome
+        div(class="background")
+        p= 'Do you want to login or create an account?'
+        div(class="signIn")
+            form(action="login", name='inlog')
+                div(class=["input"])
+                    lable(for="username") Username: 
+                    input#id(type="text", placeholder="Put your username here", name="name", size="30")
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="password") Passsword: 
+                    input#id(type="text", name="password", placeholder="Password goes here") 
+                    span(class="errorText")
+                div(class=["input"])
+                button(action='login')= Login
+                
+        div(class="createAcc")       
+            form(action="createAccount", name='create')
+                div(class=["input"])
+                    lable(for="username") Username: 
+                    input#id(type="text", placeholder="Put your username here", name="name")
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="email") Email: 
+                    input#id(type="text", placeholder="E@mail.com", name="email")
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="age") Age: 
+                    input#id(type="month", placeholder="leave you 12.9 year old", name="age")
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="password") Avatar image: 
+                    input#id(type="url", name="image", placeholder="Place an image url here") 
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="password") This is an: 
+                    select#id(name="accountType") 
+                        option User Account
+                        option Admin Account
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="password") Passsword: 
+                    input#id(type="text", name="password", placeholder="Password goes here") 
+                    span(class="errorText")
+                div(class=["input"])
+                    lable(for="re-pass") Re-enter your password: 
+                    input#id(type="text", name="rePassword", placeholder="Re-enter passowrd") 
+                    span(class="errorText")
+                div(class=["input"])
+                button(action="createAccount")= Create Account
     footer
+        h6= 'Copyright @ Puggos&trade';
         
