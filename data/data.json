@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "password": "P@ssw0rd",
+            "roles": [
+                "admin"
+            ]
+        },
+        {
+            "username": "user1",
+            "password": "P@ssw0rd",
+            "roles": []
+        }
+    ],
+
+    "posts": [
+        {
+            "postText": "",
+            "user": "",
+            "date": ""
+        }
+    ]
+}
