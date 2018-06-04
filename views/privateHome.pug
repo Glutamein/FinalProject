@@ -1,0 +1,16 @@
+html
+    head
+        title=mainTtitle
+        link(rel="stylesheet",  href="/css/styles.css")
+        script(src="/js/scripts.js")
+    body
+        nav
+            button(type="submit") Logout
+            button Edit Posts
+        h1= title
+        div(class="createPost")
+            div(class='typePost')
+                input#id(type="text", name="typeHere", placeholder='Type your post here')
+                button(type="submit") Submit Post
+        hr
+        div(class="posts")
