@@ -13,9 +13,9 @@ div{
 }
 
 input{
-    height:15px;
-    width:30px;
-    font-size:14pt;
+    height: 15px;
+    width: 30px;
+    font-size: 14pt;
 }
 
 .post{
@@ -32,5 +32,14 @@ input{
     padding: 12%;
     margin: 20px;
     border-radius: 30px;
+}
+
+.typeHere{
+    width: 30%;
+    height: 20%;
+}
+
+.typePost{
+border: solid 5px darkblue;
 }
 
