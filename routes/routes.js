@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var mongodb = require('mongodb');
 var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
 
 var mongoClient = mongodb.MongoClient;
@@ -20,10 +21,10 @@ var checkAuth = function (req, res, next) {
 var nav = [{
     "name": "Home",
     "path": "/"
-},{
-    "name":"Edit Posts",
+}, {
+    "name": "Edit Posts",
     "path": "/edit"
-},{
+}, {
     "name": "Login",
     "path": "/login"
 }
@@ -32,16 +33,16 @@ var nav = [{
 var adminNav = [{
     "name": "Home",
     "path": "/"
-},{
-    "name":"Edit Posts",
+}, {
+    "name": "Edit Posts",
     "path": "/edit"
-},{
+}, {
     "name": "Login",
     "path": "/login"
-},{
+}, {
     "name": "Admin Table",
     "path": "/admin/adminTables"
-},{
+}, {
     "name": "Reload Data",
     "path": "/admin/reloadData"
 }
@@ -78,15 +79,15 @@ router.route("/privateHome").get(
 );
 
 router.route("/privateHome").post(
-    function(req, res){
+    function (req, res) {
 
-        (async function mongo(){
-            try{
+        (async function mongo() {
+            try {
 
-            }catch(err){
+            } catch (err) {
                 console.log("Mongo Error!");
                 res.send(err);
-            }finally{
+            } finally {
                 client.close();
             }
         }());
@@ -94,7 +95,15 @@ router.route("/privateHome").post(
 );
 
 router.route("/logout").get(
-
+    function (req, res) {
+        req.session.destroy(function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('/');
+            }
+        });
+    }
 
 );
 
