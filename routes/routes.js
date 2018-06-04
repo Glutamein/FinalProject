@@ -8,6 +8,15 @@ var databaseName = "userData"
 
 var router = express.Router();
 
+var checkAuth = function (req, res, next) {
+    console.log("Checking Authingy!");
+    if (req.session.user && req.session.user.isAuthenticated) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+}
+
 var nav = [{
     "name": "Home",
     "path": "/"
