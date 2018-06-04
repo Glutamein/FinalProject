@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extented:true}));
 
 var router = require('./routes/routes');
 app.use("/", router);
-var router = require('./routes/adminRouts');
+var router = require('./routes/adminRoutes');
 app.use("/admin/", router);
 
 app.use(express.static(__dirname + '/public'));
