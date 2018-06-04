@@ -90,7 +90,12 @@ router.route("/logout").get(
 );
 
 router.route("/login").get(
-    checkAuth
-
-
+    // checkAuth,
+    function (req, res) {
+        var data = {
+            mainTitle: "Pug Site",
+            title: "Please Login or Create an Account"
+        };
+        res.render("login", data);
+    }
 );

@@ -8,7 +8,8 @@ var databaseName = "userData"
 
 var router = express.Router();
 
-router.route("/").get(
+router.route("/adminTables").get(
+    // checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
@@ -19,8 +20,9 @@ router.route("/").get(
 );
 
 router.route("/reloadData").get(
+    //checkAuth,
     function(req, res){
-        var fileData = JSON.parse(fs.readFileSync("./src/data/data.json", "utf8"));
+        var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
         console.log(fileData);
 
         // IIFE Weirdness
@@ -46,6 +48,7 @@ router.route("/reloadData").get(
 );
 
 router.route("/loadData").get(
+    //checkAuth,
     function(req, res){
         var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
         // console.log(fileData);
@@ -75,8 +78,9 @@ router.route("/loadData").get(
 );
 
 router.route("/dropData").get(
+    //checkAuth,
     function(req, res){
-        var fileData = JSON.parse(fs.readFileSync("./src/data/data.json", "utf8"));
+        var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
         console.log(fileData);
 
         // IIFE Weirdness
