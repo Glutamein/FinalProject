@@ -2,9 +2,11 @@ html
     head
         title= title
         link(rel="stylesheet",  href="/css/styles.css")
-        script(src="/js/scripts.js")
-    body
+    body(class="bg")
         nav
-            button= 'Login or Create a new Account'
+            form(action="/login") 
+                div
+                    input(type="submit", value='Login or Create a new Account')
         div(class='main')
+        script(src="/js/scripts.js")
         

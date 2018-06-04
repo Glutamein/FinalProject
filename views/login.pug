@@ -2,19 +2,18 @@ html
     head
         title=mainTitle
         link(rel="stylesheet",  href="/css/styles.css")
-        script(src="/js/scripts.js")
-    body
+    body(class="bg")
         h1= Whalecome
-        div(class="background")
+        div
         p= 'Do you want to login or create an account?'
         div(class="signIn")
             form(action="login", name='inlog')
                 div(class=["input"])
-                    lable(for="username") Username: 
+                    label(for="username") Username: 
                     input#id(type="text", placeholder="Put your username here", name="name", size="30")
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="password") Passsword: 
+                    label(for="password") Passsword: 
                     input#id(type="text", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
@@ -23,37 +22,36 @@ html
         div(class="createAcc")       
             form(action="createAccount", name='create')
                 div(class=["input"])
-                    lable(for="username") Username: 
+                    label(for="username") Username: 
                     input#id(type="text", placeholder="Put your username here", name="name")
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="email") Email: 
+                    label(for="email") Email: 
                     input#id(type="text", placeholder="E@mail.com", name="email")
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="age") Age: 
+                    label(for="age") Age: 
                     input#id(type="month", placeholder="leave you 12.9 year old", name="age")
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="password") Avatar image: 
+                    label(for="password") Avatar image: 
                     input#id(type="url", name="image", placeholder="Place an image url here") 
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="password") This is an: 
-                    select#id(name="accountType") 
-                        option User Account
-                        option Admin Account
+                    label(for="password") This is an: 
+                    input#id(type="text", placeholder="Put your role here", name="role")
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="password") Passsword: 
+                    label(for="password") Passsword: 
                     input#id(type="text", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
-                    lable(for="re-pass") Re-enter your password: 
+                    label(for="re-pass") Re-enter your password: 
                     input#id(type="text", name="rePassword", placeholder="Re-enter passowrd") 
                     span(class="errorText")
                 div(class=["input"])
-                button(action="createAccount")= Create Account
+                button(action="createAccount")= CreateAccount
+        script(src="/js/scripts.js")
     footer
-        h6= 'Copyright @ Puggos&trade';
+        h6= 'Copyright @ Puggos&trade'
         

@@ -1,6 +1,8 @@
 var express = require('express');
 var fs = require('fs');
 var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
+var mongodb = require('mongodb');
+
 
 var mongoClient = mongodb.MongoClient;
 var url = "mongodb://localhost:27017";
