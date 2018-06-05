@@ -27,6 +27,9 @@ var nav = [{
 }, {
     "name": "Login",
     "path": "/login"
+},{
+    "name": "Logout",
+    "path": "/logout"
 }
 ];
 
@@ -55,9 +58,10 @@ router.route("/edit").get(
 );
 
 router.route("/privateHome").get(
+   // checkAuth,
     function (req, res) {
         var data = {
-            mainTitle: "Pug Site",
+            mainTitle: "Home",
             title: "Welcome",
             navOptions: nav
         };

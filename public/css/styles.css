@@ -31,6 +31,16 @@ nav a{
   
 }
 
+.textThing{
+    width: 100%;
+    height: 175px;
+    margin-bottom: 3px;
+}
+
+.nb:hover{
+color: darkblue;
+}
+
 a{
     margin: 30px;
     text-decoration: aliceblue;
@@ -67,11 +77,16 @@ nav a:hover{
     border-radius: 30px;
 }
 
+.bu{
+    width: 100%;
+    margin-top: 3px;
+}
+
 .createPost{
     background-color: blue;
     align-items: center;
     padding: 12%;
-    margin: 20px;
+    margin: 10px;
     border-radius: 30px;
 }
 

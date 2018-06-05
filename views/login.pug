@@ -1,6 +1,7 @@
 html
     head
         title=mainTitle
+        link(rel="shortcut icon", type='image/x-icon', href="/images/favicon.ico")
         link(rel="stylesheet",  href="/css/styles.css")
     body(class="bg")
         h1= Whalecome
@@ -9,7 +10,7 @@ html
                 a(href=navOption.path)=navOption.name
            
         div(class='para')
-             p(class='l')= 'Do you want to login or create an account?'
+            p(class='l')= 'Do you want to login or create an account?'
         div(class="signIn")
             p(class='p')= 'Log In'
             form(action="login", name='inlog')
@@ -19,10 +20,10 @@ html
                     span(class="errorText")
                 div(class=["input"])
                     label(for="password") Passsword: 
-                    input#id(type="text", name="password", placeholder="Password goes here") 
+                    input#id(type="password", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
-                a(type="button", action='login',class='notButton')=Login
+                    a(type="button", href='/privateHome', class='nb')='Login'
         hr        
         div(class="createAcc")  
             p(class="p")='Create An Account'     
@@ -44,19 +45,19 @@ html
                     input#id(type="url", name="image", placeholder="Place an image url here") 
                     span(class="errorText")
                 div(class=["input"])
-                    label(for="password") Role: 
+                    label(for="role") Role: 
                     input#id(type="text", placeholder="Put your role here", name="role")
                     span(class="errorText")
                 div(class=["input"])
                     label(for="password") Passsword: 
-                    input#id(type="text", name="password", placeholder="Password goes here") 
+                    input#id(type="password", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
                     label(for="re-pass") Re-enter your password: 
-                    input#id(type="text", name="rePassword", placeholder="Re-enter passowrd") 
+                    input#id(type="password", name="rePassword", placeholder="Re-enter passowrd") 
                     span(class="errorText")
                 div(class=["input"])
-                a(type='button', action="createAccount", class='notButton')=CreateAccount
+                    a(type='button', href="/privateHome", class='nb')='Create Account'
         script(src="/js/scripts.js")
     footer
         h6= 'Copyright @ Puggos&trade'
