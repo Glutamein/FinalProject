@@ -3,9 +3,9 @@ html
         title=mainTtitle
         link(rel="stylesheet",  href="/css/styles.css")
     body(class="bg")
-        nav
-            button(type="submit") Logout
-            button Edit Posts
+         nav
+            each navOption in navOptions
+                a(href=navOption.path)=navOption.name
         h1= title
         div(class="createPost")
             div(class='typePost')
