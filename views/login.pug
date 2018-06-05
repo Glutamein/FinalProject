@@ -4,9 +4,15 @@ html
         link(rel="stylesheet",  href="/css/styles.css")
     body(class="bg")
         h1= Whalecome
-        div
-        p= 'Do you want to login or create an account?'
+        nav
+            a(href="publicHome.pug", type='button')= 'Home'
+            a(href="", type='button')= 'another button'
+            a(href="", type='button')= 'and another button'
+
+        div(class='para')
+             p(class='l')= 'Do you want to login or create an account?'
         div(class="signIn")
+            p(class='p')= 'Log In'
             form(action="login", name='inlog')
                 div(class=["input"])
                     label(for="username") Username: 
@@ -17,9 +23,10 @@ html
                     input#id(type="text", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
-                button(action='login')= Login
-                
-        div(class="createAcc")       
+                button(type="submit", action='login')=Login
+        hr        
+        div(class="createAcc")  
+            p(class="p")='Create An Account'     
             form(action="createAccount", name='create')
                 div(class=["input"])
                     label(for="username") Username: 
@@ -50,7 +57,7 @@ html
                     input#id(type="text", name="rePassword", placeholder="Re-enter passowrd") 
                     span(class="errorText")
                 div(class=["input"])
-                button(action="createAccount")= CreateAccount
+                button(type='submit', action="createAccount")=CreateAccount
         script(src="/js/scripts.js")
     footer
         h6= 'Copyright @ Puggos&trade'

@@ -9,13 +9,46 @@
 }
 
 div{
-    padding: 2px;
+    padding: 6px;
 }
 
-input{
-    height: 15px;
-    width: 30px;
-    font-size: 14pt;
+nav{
+    width: 99%;
+    background-color: rgba(18, 59, 196, 0.8);
+    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+    border:solid 1px darkblue;
+   margin: auto;
+   text-align: center;
+}
+
+nav a{
+    margin: 30px;
+    text-decoration: aliceblue;
+    color:whitesmoke;
+    font-size: 25px;
+  
+}
+
+nav a:hover{
+    color: aqua;
+}
+
+.p{
+    font-family: 'Franklin Gothic Medium';
+    color: darkblue;
+    font-size: 40px;
+}
+
+.l{
+    font-family: 'Franklin Gothic Medium';
+    color: darkblue;
+    font-size: 50px;
+}
+
+.para{
+    text-align: center;
 }
 
 .post{
@@ -34,13 +67,8 @@ input{
     border-radius: 30px;
 }
 
-.typeHere{
-    width: 30%;
-    height: 20%;
-}
-
 .typePost{
-border: solid 5px darkblue;
+    border: solid 5px darkblue;
 }
 
 .bg{
@@ -50,4 +78,28 @@ border: solid 5px darkblue;
     background-repeat: no-repeat;
     background-size: cover;
 }
+/* 
+button{
+    width: 50px;
+    height: 20px;
+} */
+
+.signIn{
+    background-color: RGB(0, 255, 255, .5);
+    border-radius: 60px;
+    border: solid 2px aqua;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.createAcc{
+    background-color: RGB(0, 255, 255, .5);
+    border-radius: 80px;
+    border: solid 2px aqua;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
 

@@ -11,13 +11,13 @@ form.onsubmit = function () {
     return false;
 }
 
-function passValidation(inputID, errorID, errorText, inputRegex, inputRegex, inputRegex) {
+function passValidation(inputID, errorID, errorText, inputRegex, inputRegex1, inputRegex2) {
     var passvalue = document.getElementById('password').value;
 
     var inputElement = document.getElementById(inputID);
     var errorElement = document.getElementById(errorID);
 
-    if (!inputRegex.test(passvalue)) {//if invalids
+    if (!inputRegex.test(passvalue) || !inputRegex1.test(passvalue) || !inputRegex2.test(passvalue)) {//if invalids
         errorElement.textContent = errorText;
         inputElement.classList.add('errorInput');
     }
