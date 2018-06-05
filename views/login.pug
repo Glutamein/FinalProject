@@ -22,7 +22,7 @@ html
                     input#id(type="text", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
-                button(type="submit", action='login')=Login
+                a(type="button", action='login',class='notButton')=Login
         hr        
         div(class="createAcc")  
             p(class="p")='Create An Account'     
@@ -56,7 +56,7 @@ html
                     input#id(type="text", name="rePassword", placeholder="Re-enter passowrd") 
                     span(class="errorText")
                 div(class=["input"])
-                button(type='submit', action="createAccount")=CreateAccount
+                a(type='button', action="createAccount", class='notButton')=CreateAccount
         script(src="/js/scripts.js")
     footer
         h6= 'Copyright @ Puggos&trade'
