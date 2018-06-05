@@ -5,10 +5,9 @@ html
     body(class="bg")
         h1= Whalecome
         nav
-            a(href="publicHome.pug", type='button')= 'Home'
-            a(href="", type='button')= 'another button'
-            a(href="", type='button')= 'and another button'
-
+            each navOption in navOptions
+                a(href=navOption.path)=navOption.name
+           
         div(class='para')
              p(class='l')= 'Do you want to login or create an account?'
         div(class="signIn")
@@ -45,7 +44,7 @@ html
                     input#id(type="url", name="image", placeholder="Place an image url here") 
                     span(class="errorText")
                 div(class=["input"])
-                    label(for="password") This is an: 
+                    label(for="password") Role: 
                     input#id(type="text", placeholder="Put your role here", name="role")
                     span(class="errorText")
                 div(class=["input"])

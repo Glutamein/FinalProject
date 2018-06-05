@@ -4,6 +4,8 @@ html
         link(rel="stylesheet",  href="/css/styles.css")
     body(class="bg")
         nav
+            each navOption in navOptions
+                a(href=navOption.path)=navOption.name
             form(action="/login") 
                 div
                     input(type="submit", value='Login or Create a new Account')

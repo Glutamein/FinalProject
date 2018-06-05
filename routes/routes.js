@@ -30,29 +30,14 @@ var nav = [{
 }
 ];
 
-var adminNav = [{
-    "name": "Home",
-    "path": "/"
-}, {
-    "name": "Edit Posts",
-    "path": "/edit"
-}, {
-    "name": "Login",
-    "path": "/login"
-}, {
-    "name": "Admin Table",
-    "path": "/admin/adminTables"
-}, {
-    "name": "Reload Data",
-    "path": "/admin/reloadData"
-}
-];
+
 
 router.route("/").get(
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
-            title: "Welcome"
+            title: "Welcome",
+            navOptions: nav
         };
         res.render("publicHome", data);
     }
@@ -62,7 +47,8 @@ router.route("/edit").get(
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
-            title: "Edit if you dare!"
+            title: "Edit if you dare!",
+            navOptions: nav
         };
         res.render("editUserPost", data);
     }
@@ -72,7 +58,8 @@ router.route("/privateHome").get(
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
-            title: "Welcome"
+            title: "Welcome",
+            navOptions: nav
         };
         res.render("privateHome", data);
     }
@@ -104,7 +91,8 @@ router.route("/login").get(
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
-            title: "Please Login or Create an Account"
+            title: "Please Login or Create an Account",
+            navOptions: nav
         };
         res.render("login", data);
     }
