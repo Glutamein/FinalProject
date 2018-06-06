@@ -58,7 +58,7 @@ router.route("/edit").get(
 );
 
 router.route("/privateHome").get(
-   // checkAuth,
+   checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Home",
@@ -99,7 +99,7 @@ router.route("/logout").get(
 );
 
 router.route("/login").get(
-    // checkAuth,
+    checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
@@ -115,7 +115,7 @@ router.route("/login").post(
 
         (async function mongo() {
             try {
-                myObj = { "username": name, "password": password, "roles": role, "image": image, "email": email, "age": age };
+                myObj = { "username": name, "password": password, "IsAdmin": , "image": image, "email": email, "age": age };
                 myJSON = JSON.stringify(myObj);
                 localStorage.setItem("data", myJSON);
             } catch (err) {

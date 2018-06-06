@@ -3,14 +3,12 @@
         {
             "username": "admin",
             "password": "P@ssw0rd",
-            "roles": [
-                "admin"
-            ]
+            "isAdmin": true 
         },
         {
             "username": "user1",
             "password": "P@ssw0rd",
-            "roles": []
+            "isAdmin": false
         }
     ],
 

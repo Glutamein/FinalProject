@@ -11,7 +11,7 @@ var databaseName = "userData"
 var router = express.Router();
 
 router.route("/adminTables").get(
-    // checkAuth,
+    checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
@@ -22,7 +22,7 @@ router.route("/adminTables").get(
 );
 
 router.route("/reloadData").get(
-    //checkAuth,
+    checkAuth,
     function(req, res){
         var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
         console.log(fileData);
@@ -80,7 +80,7 @@ router.route("/loadData").get(
 );
 
 router.route("/dropData").get(
-    //checkAuth,
+    checkAuth,
     function(req, res){
         var fileData = JSON.parse(fs.readFileSync("./data/data.json", "utf8"));
         console.log(fileData);
