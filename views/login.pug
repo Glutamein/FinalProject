@@ -45,9 +45,10 @@ html
                     input#id(type="url", name="image", placeholder="Place an image url here") 
                     span(class="errorText")
                 div(class=["input"])
-                    label(for="role") Role: 
-                    input#id(type="text", placeholder="Put your role here", name="role")
-                    span(class="errorText")
+                    input(id='admon', type='checkbox')
+                    | Check if Admin Account
+                //-     //- label(for="role") Are you an admin?: 
+                //-     input(type="checkbox", name="role")='Check if Admin Accounq'
                 div(class=["input"])
                     label(for="password") Passsword: 
                     input#id(type="password", name="password", placeholder="Password goes here") 
