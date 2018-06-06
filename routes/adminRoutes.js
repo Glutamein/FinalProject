@@ -35,8 +35,8 @@ router.route("/reloadData").get(
         
                 db.dropDatabase(databaseName)
                 
-                // var result1 = await db.collection("resources").insertMany(fileData.resources);            
-                // var result2 = await db.collection("expansions").insertMany(fileData.expansions);
+                var result1 = await db.collection("user").insertMany(fileData.users);            
+                var result2 = await db.collection("posts").insertMany(fileData.posts);
                 // var result3 = await db.collection("buildingPrices").insertMany(fileData.buildingPrices);
                 
                 res.json([result1, result2, result3]);
