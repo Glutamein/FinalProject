@@ -49,7 +49,7 @@ router.route("/").get(
 router.route("/edit").get(
     function (req, res) {
         var data = {
-            mainTitle: "Pug Site",
+            mainTitle: "Edit Posts",
             title: "Edit if you dare!",
             navOptions: nav
         };
