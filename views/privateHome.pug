@@ -1,6 +1,6 @@
 html
     head
-        title= mainTtitle
+        title= mainTitle
         link(rel="shortcut icon", type='image/x-icon', href="/images/favicon.ico")
         link(rel="stylesheet",  href="/css/styles.css")
     body(class="bg")
@@ -8,10 +8,10 @@ html
             each navOption in navOptions
                 a(href=navOption.path)=navOption.name
         div(class='para')
-            h1= title        
+            h1(class='welc')= title        
         div(class="createPost")
             div(class='typePost')
-                input#id(type="text", name="typeHere", class='textThing', placeholder='Type your post here')
+                input(type="text", name="typeHere", class='textThing', placeholder='Type your post here')
                 button(type="submit", class='bu') Submit Post
         hr
         div(class="posts")

@@ -31,6 +31,11 @@ nav a{
   
 }
 
+.welc{
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
 .textThing{
     width: 100%;
     height: 175px;
@@ -70,6 +75,7 @@ nav a:hover{
 }
 
 .post{
+    /* border: solid 4px darkblue; */
     background-color: blue;
     align-items: center;
     padding: 12%;
@@ -83,15 +89,17 @@ nav a:hover{
 }
 
 .createPost{
-    background-color: blue;
+    border: solid 2px darkblue;
+    background-color: rgba(6, 60, 235, 0.8);
     align-items: center;
-    padding: 12%;
+    padding: 5%;
     margin: 10px;
     border-radius: 30px;
 }
 
 .typePost{
-    border: solid 5px darkblue;
+    border: solid 5px white;
+    border-style: outset;
 }
 
 .bg{
@@ -101,6 +109,7 @@ nav a:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-color: green;
+
 }
 
 hr{
