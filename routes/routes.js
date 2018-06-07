@@ -101,7 +101,6 @@ router.route("/logout").get(
 );
 
 router.route("/login").get(
-    // checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",

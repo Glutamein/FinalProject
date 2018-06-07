@@ -41,14 +41,12 @@ html
                     input#id(type="month", placeholder="leave you 12.9 year old", name="age")
                     span(class="errorText")
                 div(class=["input"])
-                    label(for="password") Avatar image: 
+                    label(for="image") Avatar image: 
                     input#id(type="url", name="image", placeholder="Place an image url here") 
                     span(class="errorText")
                 div(class=["input"])
-                    input(id='admon', type='checkbox')
+                    input(id='admon', type='checkbox', name='admon')
                     | Check if Admin Account
-                //-     //- label(for="role") Are you an admin?: 
-                //-     input(type="checkbox", name="role")='Check if Admin Accounq'
                 div(class=["input"])
                     label(for="password") Passsword: 
                     input#id(type="password", name="password", placeholder="Password goes here") 
