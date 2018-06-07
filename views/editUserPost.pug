@@ -9,7 +9,7 @@ html
                 a(href=navOption.path)=navOption.name
         h1= title
         div(class='createPost')
-            form(action="update")
+            form(action="/updateUser", method="post")
                 div(class=["input"])
                     label(for="username") Username: 
                     input#id(type="text", placeholder="Put your username here", name="name")
@@ -23,9 +23,12 @@ html
                     input#id(type="month", placeholder="leave you 12.9 year old", name="age")
                     span(class="errorText")
                 div(class=["input"])
-                    label(for="password") Avatar image: 
+                    label(for="image") Avatar image: 
                     input#id(type="url", name="image", placeholder="Place an image url here") 
                     span(class="errorText")
+                div(class=["input"])
+                    input(id='admon', type='checkbox', name='admon')
+                    | Check if Admin Account
                 div(class=["input"])
                     label(for="password") Passsword: 
                     input#id(type="password", name="password", placeholder="Password goes here") 
@@ -35,7 +38,7 @@ html
                     input#id(type="password", name="rePassword", placeholder="Re-enter password") 
                     span(class="errorText")
                 div(class=["input"])
-                    a(action='/login', method = 'post', type='button', href="/privateHome", class='nb')='Update Account Info'
+                    input(type="submit", value="Update User")
 
         h2= 'Delete the post of your choice'
         div(class='createPost')

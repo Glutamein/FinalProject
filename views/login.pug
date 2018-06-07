@@ -13,7 +13,7 @@ html
             p(class='l')= 'Do you want to login or create an account?'
         div(class="signIn")
             p(class='p')= 'Log In'
-            form(action="/login", name='inlog')
+            form(action="/login", name='inlog', method='post')
                 div(class=["input"])
                     label(for="username") Username: 
                     input#id(type="text", placeholder="Put your username here", name="name", size="30")
@@ -23,7 +23,8 @@ html
                     input#id(type="password", name="password", placeholder="Password goes here") 
                     span(class="errorText")
                 div(class=["input"])
-                    a(type="button", href='/privateHome', class='nb')='Login'
+                    input(type="submit", value="Login")
+                    //- a(type="button", href='/privateHome', class='nb')='Login'
         hr        
         div(class="createAcc")  
             p(class="p")='Create An Account'     

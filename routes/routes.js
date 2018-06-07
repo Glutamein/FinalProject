@@ -100,6 +100,53 @@ router.route("/logout").get(
 
 );
 
+
+router.route("/login").get(
+    function (req, res) {
+        var data = {
+            mainTitle: "Pug Site",
+            title: "Please Login or Create an Account",
+            navOptions: nav
+        };
+        res.render("login", data);
+    }
+);
+
+router.route("/updateUser").post(
+    function (req, res) {
+        console.log(req.body);
+        (async function mongo() {
+            try {
+                var client = await mongoClient.connect(url);
+
+                var db = client.db(databaseName);
+                
+                var user = await db.collection("users").findOne({ "username": req.body.username });
+                
+                // db.(user)
+            
+                var newUser = {
+                    "username": req.body.name,
+                    "email": req.body.email,
+                    "password": req.body.password,
+                    "isAdmin": req.body.admon,
+                    "imgUrl": req.body.image,
+                };
+
+                await db.collection("users").insertOne(newUser);
+
+                req.redirect("/home");
+
+            } catch (err) {
+                console.log("Mongo Error!");
+                console.log(err);
+            } finally {
+                client.close();
+            }
+        }());
+    }
+);
+
 router.route("/login").get(
     function (req, res) {
         var data = {
@@ -146,6 +193,8 @@ router.route("/createUser").post(
         }());
     }
 );
+
+
 
 router.route("/login").post(
     function (req, res) {
