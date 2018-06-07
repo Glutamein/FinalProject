@@ -1,7 +1,14 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var expressSession = require('express-session');
 
 var app = express();
+
+app.use(expressSession({
+    secret: 'Whatever54321',
+    saveUninitialized: true,
+    resave: true
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));

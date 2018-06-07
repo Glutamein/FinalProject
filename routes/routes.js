@@ -58,7 +58,7 @@ router.route("/edit").get(
 );
 
 router.route("/privateHome").get(
-    checkAuth,
+   checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Home",
@@ -101,7 +101,7 @@ router.route("/logout").get(
 );
 
 router.route("/login").get(
-    checkAuth,
+    // checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Pug Site",
@@ -120,6 +120,13 @@ router.route("/login").post(
                 myObj = { "username": name, "password": password, "isAdmin": admon, "image": image, "email": email, "age": age };
                 myJSON = JSON.stringify(myObj);
                 localStorage.setItem("data", myJSON);
+
+                req.session.user = {
+                    isAuthenticated: true,
+                    username: req.body.username,
+                    isAdmin: user.roles.includes("admin")
+                };
+
             } catch (err) {
                 console.log("Mongo Error!");
                 res.send(err);

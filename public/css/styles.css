@@ -88,6 +88,10 @@ nav a:hover{
     margin-top: 3px;
 }
 
+.hrg{
+    color: aliceblue;
+}
+
 .createPost{
     border: solid 2px darkblue;
     background-color: rgba(6, 60, 235, 0.8);

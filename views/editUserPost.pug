@@ -8,4 +8,36 @@ html
             each navOption in navOptions
                 a(href=navOption.path)=navOption.name
         h1= title
+        div(class='createPost')
+            form(action="update")
+                div(class=["input"])
+                    label(for="username") Username: 
+                    input#id(type="text", placeholder="Put your username here", name="name")
+                    span(class="errorText")
+                div(class=["input"])
+                    label(for="email") Email: 
+                    input#id(type="text", placeholder="E@mail.com", name="email")
+                    span(class="errorText")
+                div(class=["input"])
+                    label(for="age") Age: 
+                    input#id(type="month", placeholder="leave you 12.9 year old", name="age")
+                    span(class="errorText")
+                div(class=["input"])
+                    label(for="password") Avatar image: 
+                    input#id(type="url", name="image", placeholder="Place an image url here") 
+                    span(class="errorText")
+                div(class=["input"])
+                    label(for="password") Passsword: 
+                    input#id(type="password", name="password", placeholder="Password goes here") 
+                    span(class="errorText")
+                div(class=["input"])
+                    label(for="re-pass") Re-enter your password: 
+                    input#id(type="password", name="rePassword", placeholder="Re-enter password") 
+                    span(class="errorText")
+                div(class=["input"])
+                    a(action='/login', method = 'post', type='button', href="/privateHome", class='nb')='Update Account Info'
+
+        h2= 'Delete the post of your choice'
+        div(class='createPost')
+            h4(class='hrg')= 'If our post stuff was working, you would see the posts a user made here!'
         script(src="/js/scripts.js")

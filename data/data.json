@@ -14,9 +14,9 @@
 
     "posts": [
         {
-            "postText": "",
-            "user": "",
-            "date": ""
+            "postText": "Noot-N00t",
+            "user": "user1",
+            "date": "2018-06-07"
         }
     ]
 }
