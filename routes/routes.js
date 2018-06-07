@@ -202,7 +202,7 @@ router.route("/login").post(
         (async function mongo() {
             try {
                 
-                var user = await db.collection("users").findOne({ "username": req.body.username });
+                var user = await db.collection("users").findOne({ "username": req.body.name });
 
                 console.log(user);
 
@@ -212,13 +212,13 @@ router.route("/login").post(
 
                 // Should be comparing the hashed password
                 // Remember, plain text passwords are bad!
-                var validLogin = user.password == req.body.pass;
+                var validLogin = user.password == req.body.password;
 
                 if (validLogin) {
-                    console.log("Valid login for " + user.username);
+                    console.log("Valid login for " + user.name);
                     req.session.user = {
                         isAuthenticated: true,
-                        username: req.body.username,
+                        username: req.body.name,
                         isAdmin: user.roles.includes("admin")
                     };
 
