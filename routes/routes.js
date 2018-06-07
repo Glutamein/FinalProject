@@ -58,7 +58,7 @@ router.route("/edit").get(
 );
 
 router.route("/privateHome").get(
-   checkAuth,
+    checkAuth,
     function (req, res) {
         var data = {
             mainTitle: "Home",
@@ -111,16 +111,16 @@ router.route("/login").get(
     }
 );
 
-router.route("/login").post(
+router.route("/createUser").post(
     function (req, res) {
-
+        console.log(req.body);
         (async function mongo() {
             try {
                 var client = await mongoClient.connect(url);
 
                 var db = client.db(databaseName);
-
-                var user = await db.collection("users").findOne({ "username": req.body.username });
+                
+                // var user = await db.collection("users").findOne({ "username": req.body.username });
                 
                 var newUser = {
                     "username": req.body.name,
@@ -130,7 +130,30 @@ router.route("/login").post(
                     "imgUrl": req.body.image,
                 };
 
+                // console.log(user);
+                console.log(newUser);
+
                 await db.collection("users").insertOne(newUser);
+
+                req.redirect("/home");
+
+            } catch (err) {
+                console.log("Mongo Error!");
+                console.log(err);
+            } finally {
+                client.close();
+            }
+        }());
+    }
+);
+
+router.route("/login").post(
+    function (req, res) {
+
+        (async function mongo() {
+            try {
+                
+                var user = await db.collection("users").findOne({ "username": req.body.username });
 
                 console.log(user);
 
@@ -152,27 +175,9 @@ router.route("/login").post(
 
                     res.redirect("/");
                 }
-
-                // (async function mongo() {
-                //     try {
-                //         var client = await mongoClient.connect(url);
-        
-                //         var db = client.db(databaseName);
-        
-                //         var newMonster = {
-                //             "name": req.body.name,
-                //             "element": req.body.element,
-                //             "ailments": [req.body.ailments],
-                //             "imgUrl": req.body.imgUrl,
-                //         };
-        
-                //         await db.collection("monsters").insertOne(newMonster);
-        
-                //         res.redirect("/mh/monster/" + req.body.name);
-                //     }
             } catch (err) {
                 console.log("Mongo Error!");
-                res.send(err);
+                console.log(err);
             } finally {
                 client.close();
             }

@@ -13,7 +13,7 @@ html
             p(class='l')= 'Do you want to login or create an account?'
         div(class="signIn")
             p(class='p')= 'Log In'
-            form(action="login", name='inlog')
+            form(action="/login", name='inlog')
                 div(class=["input"])
                     label(for="username") Username: 
                     input#id(type="text", placeholder="Put your username here", name="name", size="30")
@@ -27,7 +27,7 @@ html
         hr        
         div(class="createAcc")  
             p(class="p")='Create An Account'     
-            form(action="createAccount", name='create')
+            form(action="/createUser", method="post")
                 div(class=["input"])
                     label(for="username") Username: 
                     input#id(type="text", placeholder="Put your username here", name="name")
@@ -56,7 +56,8 @@ html
                     input#id(type="password", name="rePassword", placeholder="Re-enter password") 
                     span(class="errorText")
                 div(class=["input"])
-                    a(action='/login', method = 'post', type='button', href="/privateHome", class='nb')='Create Account'
+                    input(type="submit", value="Create User")
+                    //- a(action='/createUser', method = 'post', type='button', href="/privateHome", class='nb')='Create Account'
         script(src="/js/scripts.js")
     footer
         h6= 'Copyright @ Puggos&trade'
