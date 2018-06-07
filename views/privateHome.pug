@@ -11,8 +11,9 @@ html
             h1(class='welc')= title        
         div(class="createPost")
             div(class='typePost')
-                input(type="text", name="typeHere", class='textThing', placeholder='Type your post here')
-                button(type="submit", class='bu') Submit Post
+                form(class='enter')
+                    input(type="text", name="typeHere", class='textThing', placeholder='Type your post here')
+                    button(type="submit", class='bu') Submit Post
         hr
         div(class="posts")
         script(src="/js/scripts.js")

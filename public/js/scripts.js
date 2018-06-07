@@ -1,6 +1,6 @@
-var form = document.getElementById('regform');
+var form = document.getElementById('enter');
 form.onsubmit = function () {
-    var form = document.getElementById('regform');
+    var form = document.getElementById('enter');
     var password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/;
     var pass8 = /(?=.{8,})/;
     var passC = /(?=.*[!@#\$%\^&\*\(\)\[\]\{\}\;:\'\"\<\>\,.\/\?])/g;

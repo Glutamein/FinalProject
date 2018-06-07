@@ -117,7 +117,7 @@ router.route("/login").post(
 
         (async function mongo() {
             try {
-                myObj = { "username": name, "password": password, "isAdmin": , "image": image, "email": email, "age": age };
+                myObj = { "username": name, "password": password, "isAdmin": true, "image": image, "email": email, "age": age };
                 myJSON = JSON.stringify(myObj);
                 localStorage.setItem("data", myJSON);
             } catch (err) {
