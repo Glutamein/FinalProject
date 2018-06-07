@@ -7,8 +7,6 @@ var mongoClient = mongodb.MongoClient;
 var url = "mongodb://localhost:27017";
 var databaseName = "userData"
 
-var router = express.Router();
-
 var checkAuth = function (req, res, next) {
     console.log("Checking Authingy!");
     if (req.session.user && req.session.user.isAuthenticated) {
@@ -17,6 +15,8 @@ var checkAuth = function (req, res, next) {
         res.redirect('/login');
     }
 }
+
+var router = express.Router();
 
 var nav = [{
     "name": "Home",
@@ -117,7 +117,11 @@ router.route("/login").post(
 
         (async function mongo() {
             try {
+<<<<<<< HEAD
                 myObj = { "username": name, "password": password, "isAdmin": true, "image": image, "email": email, "age": age };
+=======
+                myObj = { "username": name, "password": password, "isAdmin": admon, "image": image, "email": email, "age": age };
+>>>>>>> b9dc28109e3ac57b1be560da03d8ee360c6ff9b0
                 myJSON = JSON.stringify(myObj);
                 localStorage.setItem("data", myJSON);
             } catch (err) {

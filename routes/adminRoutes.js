@@ -8,6 +8,15 @@ var mongoClient = mongodb.MongoClient;
 var url = "mongodb://localhost:27017";
 var databaseName = "userData"
 
+var checkAuth = function (req, res, next) {
+    console.log("Checking Authingy!");
+    if (req.session.user && req.session.user.isAuthenticated) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+}
+
 var router = express.Router();
 
 router.route("/adminTables").get(
@@ -102,5 +111,7 @@ router.route("/dropData").get(
         }());
     }
 );
+
+
 
 module.exports = router;

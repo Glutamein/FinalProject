@@ -55,10 +55,10 @@ html
                     span(class="errorText")
                 div(class=["input"])
                     label(for="re-pass") Re-enter your password: 
-                    input#id(type="password", name="rePassword", placeholder="Re-enter passowrd") 
+                    input#id(type="password", name="rePassword", placeholder="Re-enter password") 
                     span(class="errorText")
                 div(class=["input"])
-                    a(type='button', href="/privateHome", class='nb')='Create Account'
+                    a(action='/login', method = 'post', type='button', href="/privateHome", class='nb')='Create Account'
         script(src="/js/scripts.js")
     footer
         h6= 'Copyright @ Puggos&trade'
